@@ -1,0 +1,195 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background: #333;
+  font-size: 1.4rem;
+  color: #000;
+  font-family: Arial;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.game{
+  position: relative;
+  background: url(../img/background/background.png);
+  background-size: cover;
+  width: 1000px;
+  height: 600px;
+  margin: 5rem auto;
+  overflow: hidden;
+  animation: ground 2.5s steps(1200) infinite;
+  animation-play-state: paused;
+}
+
+@keyframes ground {
+  100% {background-position: 100% 0;}
+}
+
+.hero{
+  display: block;
+  position: relative;
+  top: 63.2%;
+  left: 5%;
+  background: url(../img/hero/right/hero.png) no-repeat;
+  width: auto;
+  height: 80px;
+}
+
+.right{
+  background: url(../img/hero/right/hero.png) no-repeat;
+}
+
+.left{
+  background: url(../img/hero/left/hero-default.png) no-repeat;
+}
+
+.up{
+  transform: translateY(-100px);
+  transition: all .05s linear;
+}
+
+.shot-left{
+  background: url(../img/hero/left/hero-shot.png) no-repeat;
+  height: 85px;
+}
+
+.shot-right{
+  background: url(../img/hero/right/hero-shot.png) no-repeat;
+  height: 85px;
+}
+
+.right.run{
+  width: 60px;
+  background: url(../img/hero/right/hero-run.png) no-repeat;
+  animation: hero .5s steps(2) infinite;
+}
+
+.left.run{
+  width: 60px;
+  background: url(../img/hero/left/hero-run.png) no-repeat;
+  animation: hero .5s steps(2) infinite;
+}
+
+.down-right{
+  background: url(../img/hero/right/hero-up.png) no-repeat;
+  transform: translateY(0px);
+  transition: transform .1s ease-in-out;
+}
+
+.down-left{
+  background: url(../img/hero/left/hero-up.png) no-repeat;
+  transform: translateY(0px);
+  transition: transform .1s ease-in-out;
+}
+
+@keyframes hero {
+  100% {background-position: 200% 0;}
+}
+
+.went-right{
+  background: url(../img/hero/right/hero-went.png) no-repeat;
+}
+
+.went-left{
+  background: url(../img/hero/left/hero-went.png) no-repeat;
+}
+
+.die-left{
+  background: url(../img/hero/left/die.png) no-repeat;
+  top: 66.5%;
+}
+
+.die-right{
+  background: url(../img/hero/right/die.png) no-repeat;
+  top: 66.5%;
+}
+
+.cloud{
+  width: 196px;
+  height: 99px;
+  background: url(https://res.cloudinary.com/dspfsamgq/image/upload/v1590225630/RunningMan/cloud_qzbk64.png);
+  position: absolute;
+  top: 0;
+  left:0;
+  animation: clouds 12s linear infinite;
+  transform: translateX(1000%);
+}
+
+@keyframes clouds {
+  100% {transform: translateX(-100%);}
+}
+ .cloud2 {
+  top: 100px;
+  animation: clouds 10s linear infinite;
+ }
+
+ .cloud3 {
+  top: 80px;
+  animation: clouds 16s linear infinite;
+ }
+
+ .cloud4 {
+  top: 120px;
+  animation: clouds 12s linear infinite;
+ }
+
+.enemy{
+  position: absolute;
+  top: 63%;
+  left: 560px;
+  background: url(../img/enemy/left/enemy.png) no-repeat;
+  width: 54px;
+  height: 80px;
+  transition: all .2s linear;
+  transform: translateX(100%);
+}
+
+.enemy.left{
+  background: url(../img/enemy/left/enemy.png) no-repeat;
+}
+
+.enemy.right{
+  background: url(../img/enemy/right/enemy.png) no-repeat;
+}
+
+.enemy.right.shot{
+  background: url(../img/enemy/right/enemy-shot.png) no-repeat;
+  width: 72px;
+}
+
+.enemy.left.shot{
+  background: url(../img/enemy/left/enemy-shot.png) no-repeat;
+  width: 72px;
+}
+
+.enemy.left.enemy-shot{
+  background: url(../img/enemy/left/enemy-shot.png) no-repeat;
+}
+
+.enemy.right.enemy-shot{
+  background: url(../img/enemy/right/enemy-shot.png) no-repeat;
+}
+
+.shots-left{
+  background: url(../img/enemy/left/enemy-shots.png) no-repeat !important;
+  width: 85px !important;
+}
+.shots-right{
+  background: url(../img/enemy/right/enemy-shots.png) no-repeat !important;
+  width: 85px !important;
+}
+
+.enemy.die{
+  filter: grayscale(1);
+  transform: rotate(90deg);
+  top: 67%;
+  animation: enemy 2.5s steps(1200) infinite;
+  animation-play-state: paused;
+}
+
+.run{
+  animation-play-state: running;
+}
